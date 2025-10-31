@@ -1,206 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de Privacidad</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidad · Rootlish</title>
+    <meta name="description" content="Política de Privacidad de Rootlish: uso del micrófono, tratamiento de datos, copias de seguridad en Google Drive y solicitud de eliminación de datos." />
+    <link rel="icon" href="logo-120.png">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #f7f9fc;
-            color: #333;
-            line-height: 1.6;
+        /* Tema orgánico (coincide con index.html) */
+        :root{
+            --paper: #fafdfb;
+            --ink: #0d2b21;
+            --muted: #4b635b;
+            --card: #ffffff;
+            --leaf: #16a34a;
+            --leaf-2:#22c55e;
+            --berry:#3b82f6;
+            --ring: #16a34a2a;
+            --line: #e6f3ec;
         }
-        header {
-            background: linear-gradient(135deg, #007BFF, #00A8E8);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        *{box-sizing:border-box}
+        html,body{margin:0}
+        body{
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+            color: var(--ink); background:
+                radial-gradient(900px 400px at 10% 0%, #a7f3d033, transparent 55%),
+                radial-gradient(800px 360px at 95% 5%, #bfdbfe33, transparent 60%),
+                linear-gradient(#ffffff, var(--paper));
+            line-height:1.65;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
+        a{color:#0b63ff;text-decoration:none}
+        a:hover{text-decoration:underline}
+        .container{max-width:1040px;margin:0 auto;padding:22px}
+
+        /* Header + nav igual al index */
+        header{
+            position:sticky; top:0; background:#ffffffcc; backdrop-filter:saturate(140%) blur(8px);
+            border-bottom:1px solid var(--line); z-index:10;
         }
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+        .brand{display:flex;gap:12px;align-items:center}
+        .brand img{width:44px;height:44px;border-radius:12px;box-shadow:0 6px 20px #00000010}
+        .brand strong{font-weight:800;letter-spacing:.2px}
+        .links{display:flex;gap:18px;flex-wrap:wrap}
+        .links a{color:var(--ink)}
+        .links a:hover{color:#0b63ff}
+
+        /* Hero pequeño */
+        .hero{padding:34px 0 10px}
+        .badge{
+            display:inline-block; font-size:12px; letter-spacing:.3px;
+            color:#065f46; background:#ecfdf5; border:1px solid #a7f3d0;
+            border-radius:999px; padding:6px 10px; margin-bottom:10px
         }
-        h2 {
-            color: #007BFF;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: .3rem;
-            margin-top: 2rem;
+        h1{font-size:clamp(24px,3.2vw,36px); margin:0 0 8px}
+        .lead{color:var(--muted); margin:0}
+
+        /* Contenido legal en tarjeta */
+        .paper{
+            background:var(--card); border:1px solid var(--line); border-radius:16px;
+            box-shadow:0 10px 30px #00000008; padding:22px;
         }
-        h3 {
-            margin-top: 1rem;
-            color: #0b7dda;
+        h2{margin-top:28px;border-bottom:1px solid var(--line); padding-bottom:.35rem; color:var(--leaf)}
+        h3{margin-top:18px;color:#0b63ff}
+        p{text-align:justify}
+        ul,ol{margin:.6rem 0 1rem 1.25rem}
+        li{margin:.25rem 0}
+        code{
+            background:#f1f5fb; padding:.1rem .35rem; border-radius:4px;
+            font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.95em;
         }
-        p { margin-bottom: 1rem; text-align: justify; }
-        ul, ol { margin: .6rem 0 1rem 1.25rem; }
-        li { margin: .25rem 0; }
-        code {
-            background: #f1f5fb;
-            padding: .1rem .35rem;
-            border-radius: 4px;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: .95em;
+        .callout{
+            background:#eef6ff; border-left:4px solid #0b63ff;
+            padding:.75rem 1rem; border-radius:6px; margin:1rem 0;
         }
-        .callout {
-            background: #eef6ff;
-            border-left: 4px solid #0b7dda;
-            padding: .75rem 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-        a { color: #0b7dda; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            font-size: .9rem;
-            color: #666;
-            margin-top: 2rem;
+
+        footer{border-top:1px solid var(--line); margin-top:26px; background:#ffffffa8}
+        footer .container{padding:18px 22px; color:var(--muted)}
+
+        @media (prefers-color-scheme: dark){
+            body{color:#e8f5ee; background:#0b1220}
+            header{background:#0b1220cc; border-bottom-color:#1a2a24}
+            .links a{color:#e8f5ee}
+            .paper{background:linear-gradient(180deg,#0f172a,#0b1220); border-color:#1a2a24; box-shadow:0 10px 30px #00000055}
+            h2{color:#86efac; border-bottom-color:#1a2a24}
+            h3{color:#60a5fa}
+            .callout{background:#0b2548; border-left-color:#60a5fa}
+            code{background:#0d2138}
+            footer{background:#0b1220; border-top-color:#1a2a24}
         }
     </style>
 </head>
 <body>
+<!-- NAV compartida -->
 <header>
-    <h1>Política de Privacidad</h1>
-    <p>Protegemos tu información y tu voz</p>
+    <div class="container nav">
+        <div class="brand">
+            <img src="logo-120.png" alt="Logo Rootlish" />
+            <strong>Rootlish</strong>
+        </div>
+        <nav class="links">
+            <a href="./index.html">Inicio</a>
+            <a href="./privacy.html">Privacidad</a>
+            <a href="./terms.html">Términos</a>
+        </nav>
+    </div>
 </header>
 
-<main>
-    <h2>1. Uso del micrófono</h2>
-    <p>
-        Nuestra aplicación utiliza el micrófono exclusivamente para realizar ejercicios de pronunciación en inglés ("speaking").
-        El audio capturado se procesa en tiempo real para convertirlo en texto y evaluar tu desempeño.
-    </p>
+<main class="container">
+    <section class="hero">
+        <span class="badge">📜 Documentación legal</span>
+        <h1>Política de Privacidad</h1>
+        <p class="lead">Protegemos tu información y tu voz.</p>
+    </section>
 
-    <h2>2. No almacenamiento de audio</h2>
-    <p>
-        No grabamos, almacenamos ni compartimos el audio capturado. El procesamiento se realiza de manera temporal
-        y, una vez finalizado el ejercicio, la grabación deja de existir inmediatamente. No generamos ni guardamos
-        archivos de voz (como MP3, WAV u otros).
-    </p>
+    <section class="paper">
+        <h2>1. Uso del micrófono</h2>
+        <p>Nuestra aplicación utiliza el micrófono exclusivamente para realizar ejercicios de pronunciación en inglés ("speaking"). El audio capturado se procesa en tiempo real para convertirlo en texto y evaluar tu desempeño.</p>
 
-    <h2>3. Procesamiento de datos</h2>
-    <p>
-        El reconocimiento de voz a texto es gestionado localmente en el dispositivo o a través de un servicio seguro
-        de terceros. El texto resultante no contiene información personal identificable y no se almacena en ninguna
-        base de datos propia de nuestros servidores.
-    </p>
+        <h2>2. No almacenamiento de audio</h2>
+        <p>No grabamos, almacenamos ni compartimos el audio capturado. El procesamiento se realiza de manera temporal y, una vez finalizado el ejercicio, la grabación deja de existir inmediatamente. No generamos ni guardamos archivos de voz (como MP3, WAV u otros).</p>
 
-    <h2>4. Seguridad y privacidad</h2>
-    <p>
-        Hemos implementado medidas técnicas y organizativas para garantizar que el uso del micrófono y el
-        procesamiento del audio se realicen de forma segura, protegiendo la privacidad del usuario en todo momento.
-    </p>
+        <h2>3. Procesamiento de datos</h2>
+        <p>El reconocimiento de voz a texto es gestionado localmente en el dispositivo o a través de un servicio seguro de terceros. El texto resultante no contiene información personal identificable y no se almacena en ninguna base de datos propia de nuestros servidores.</p>
 
-    <h2>5. Contacto</h2>
-    <p>
-        Si tienes preguntas sobre esta política de privacidad o el manejo de tu información,
-        puedes contactarnos en: <strong>brunorodriguezvaca@gmail.com</strong>
-    </p>
+        <h2>4. Seguridad y privacidad</h2>
+        <p>Hemos implementado medidas técnicas y organizativas para garantizar que el uso del micrófono y el procesamiento del audio se realicen de forma segura, protegiendo la privacidad del usuario en todo momento.</p>
 
-    <h2>6. Eliminación de datos</h2>
-    <p>
-        La app puede manejar información básica de cuenta (nombre y correo tras iniciar sesión con Google) y tu
-        <strong>progreso de lecciones</strong>. Esta información se almacena:
-    </p>
-    <ul>
-        <li><strong>Localmente en tu dispositivo</strong> (datos de sesión y progreso para funcionar sin conexión).</li>
-        <li>
-            <strong>En tu Google Drive</strong>, dentro de la carpeta privada <em>appDataFolder</em> (no visible en el explorador de archivos).
-            Ahí se guarda una copia de seguridad de tu base de datos (p. ej. <code>writable_database.json</code>), únicamente accesible por esta aplicación.
-        </li>
-    </ul>
+        <h2>5. Contacto</h2>
+        <p>Si tienes preguntas sobre esta política de privacidad o el manejo de tu información, puedes contactarnos en: <strong>rootlishlearning@gmail.com</strong></p>
 
-    <h3>6.1 Borrar datos locales del dispositivo</h3>
-    <ul>
-        <li>Desde la app: usa la opción <em>“Eliminar datos / Restablecer”</em> si está disponible.</li>
-        <li>O desde el sistema: ve a <em>Ajustes &gt; Apps &gt; (nombre de la app)</em> y pulsa <em>“Almacenamiento &gt; Borrar datos”</em>.</li>
-        <li>Al desinstalar la app también se eliminan los datos locales.</li>
-    </ul>
+        <h2>6. Eliminación de datos</h2>
+        <p>La app puede manejar información básica de cuenta (nombre y correo tras iniciar sesión con Google) y tu <strong>progreso de lecciones</strong>. Esta información se almacena:</p>
+        <ul>
+            <li><strong>Localmente en tu dispositivo</strong> (datos de sesión y progreso para funcionar sin conexión).</li>
+            <li><strong>En tu Google Drive</strong>, dentro de la carpeta privada <em>appDataFolder</em> (no visible en el explorador de archivos). Ahí se guarda una copia de seguridad de tu base de datos (p. ej. <code>writable_database.json</code>), únicamente accesible por esta aplicación.</li>
+        </ul>
 
-    <h3>6.2 Borrar la copia de seguridad en Google Drive (datos ocultos de la app)</h3>
-    <p>
-        La copia de seguridad se guarda en <em>appDataFolder</em> y no aparece en “Mi unidad”. Para eliminarla:
-    </p>
-    <ol>
-        <li>Abre <a href="https://drive.google.com/" target="_blank" rel="noopener">Google Drive</a> en un navegador.</li>
-        <li>Haz clic en el <strong>icono de rueda</strong> y entra en <strong>Configuración</strong>.</li>
-        <li>En el panel izquierdo, abre <strong>Administrar aplicaciones</strong> (<em>Manage Apps</em>).</li>
-        <li>Busca la app (por ejemplo, <em>English Tutor</em>).</li>
-        <li>En <strong>Opciones</strong>, elige <strong>Eliminar datos ocultos de la aplicación</strong> y confirma.</li>
-    </ol>
+        <h3>6.1 Borrar datos locales del dispositivo</h3>
+        <ul>
+            <li>Desde la app: usa la opción <em>“Eliminar datos / Restablecer”</em> si está disponible.</li>
+            <li>O desde el sistema: ve a <em>Ajustes &gt; Apps &gt; (nombre de la app)</em> y pulsa <em>“Almacenamiento &gt; Borrar datos”</em>.</li>
+            <li>Al desinstalar la app también se eliminan los datos locales.</li>
+        </ul>
 
-    <h3>6.3 Revocar el acceso de la app a tu cuenta de Google</h3>
-    <p>
-        Para impedir futuros accesos:
-    </p>
-    <ol>
-        <li>Ve a <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">
-            myaccount.google.com/permissions</a> (Cuenta de Google &gt; Seguridad &gt; Acceso de terceros).</li>
-        <li>Selecciona la app y pulsa <strong>Retirar acceso</strong>.</li>
-    </ol>
-    <p class="callout">
-        Nota: revocar acceso no elimina automáticamente los datos existentes en Drive; para eso usa los pasos del punto 6.2.
-        Si necesitas ayuda, escríbenos a <strong>brunorodriguezvaca@gmail.com</strong>.
-    </p>
+        <h3>6.2 Borrar la copia de seguridad en Google Drive (datos ocultos de la app)</h3>
+        <p>La copia de seguridad se guarda en <em>appDataFolder</em> y no aparece en “Mi unidad”. Para eliminarla:</p>
+        <ol>
+            <li>Abre <a href="https://drive.google.com/" target="_blank" rel="noopener">Google Drive</a> en un navegador.</li>
+            <li>Haz clic en el <strong>icono de rueda</strong> y entra en <strong>Configuración</strong>.</li>
+            <li>En el panel izquierdo, abre <strong>Administrar aplicaciones</strong> (<em>Manage Apps</em>).</li>
+            <li>Busca la app (por ejemplo, <em>English Tutor</em>).</li>
+            <li>En <strong>Opciones</strong>, elige <strong>Eliminar datos ocultos de la aplicación</strong> y confirma.</li>
+        </ol>
 
-    <!-- NUEVO: Sección para el enlace de “Eliminación de datos” de Google Play -->
-    <h2>7. Solicitud de eliminación de datos (requisito de Google Play)</h2>
-    <h3>7.1 Identificación</h3>
-    <p>
-        Esta política corresponde a la aplicación <strong>English Tutor</strong> (paquete <code>com.digitaldevs.languagelearning</code>),
-        publicada por <strong>Digital Devs</strong>.
-    </p>
+        <h3>6.3 Revocar el acceso de la app a tu cuenta de Google</h3>
+        <p>Para impedir futuros accesos:</p>
+        <ol>
+            <li>Ve a <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> (Cuenta de Google &gt; Seguridad &gt; Acceso de terceros).</li>
+            <li>Selecciona la app y pulsa <strong>Retirar acceso</strong>.</li>
+        </ol>
 
-    <h3>7.2 ¿Cómo solicitar la eliminación?</h3>
-    <p>
-        Además de los pasos de los apartados 6.1–6.3, puedes pedirnos directamente la eliminación de tus datos asociados a la app:
-    </p>
-    <ol>
-        <li>Envía un correo a <a href="mailto:brunorodriguezvaca@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20datos%20-%20English%20Tutor&body=Hola%2C%20quiero%20solicitar%20la%20eliminaci%C3%B3n%20de%20mis%20datos%20asociados%20a%20la%20app%20English%20Tutor.%20Correo%20con%20el%20que%20inici%C3%A9%20sesi%C3%B3n%3A%20_____%0A%0AEntiendo%20que%20esto%20puede%20eliminar%20mi%20progreso%20y%20copias%20de%20seguridad.">
-            brunorodriguezvaca@gmail.com</a> indicando el correo con el que iniciaste sesión en la app.</li>
-        <li>Procesaremos la solicitud normalmente en un plazo de <strong>7 días</strong> y, como máximo, en <strong>30 días naturales</strong>.</li>
-        <li>Te confirmaremos por correo cuando la eliminación haya sido completada o si necesitamos información adicional para verificar tu identidad.</li>
-    </ol>
+        <p class="callout">Nota: revocar acceso no elimina automáticamente los datos existentes en Drive; para eso usa los pasos del punto 6.2. Si necesitas ayuda, escríbenos a <strong>brunorodriguezvaca@gmail.com</strong>.</p>
 
-    <h3>7.3 ¿Qué datos se eliminan o conservan? ¿Y por cuánto tiempo?</h3>
-    <ul>
-        <li><strong>Datos que se eliminan</strong>:
-            <ul>
-                <li>Progreso/estadísticas de lecciones almacenados localmente.</li>
-                <li>Copia de seguridad en tu <em>Google Drive &gt; appDataFolder</em> (p. ej. <code>writable_database.json</code>).</li>
-                <li>Tokens/credenciales de sesión guardados por la app (p. ej., en almacenamiento seguro del dispositivo).</li>
-            </ul>
-        </li>
-        <li><strong>Datos que NO conservamos en servidores propios</strong>:
-            no manejamos servidores propios con tu información personal; la app trabaja en tu dispositivo y, opcionalmente, en tu propio Google Drive.</li>
-        <li><strong>Retención</strong>:
-            <ul>
-                <li>Datos locales: permanecen hasta que el usuario los borra (p. ej., “Borrar datos” o desinstalación) o hasta que atendemos tu solicitud de eliminación.</li>
-                <li>Datos en Drive: permanecen hasta que el usuario los elimina siguiendo el punto 6.2 o hasta que los eliminemos al atender tu solicitud.</li>
-                <li>Tokens de acceso: caducan automáticamente (normalmente en ~1 hora); al eliminar datos revocamos/limpiamos credenciales.</li>
-            </ul>
-        </li>
-    </ul>
+        <h2>7. Solicitud de eliminación de datos (requisito de Google Play)</h2>
+        <h3>7.1 Identificación</h3>
+        <p>Esta política corresponde a la aplicación <strong>English Tutor</strong> (paquete <code>com.digitaldevs.languagelearning</code>), publicada por <strong>Digital Devs</strong>.</p>
 
-    <p class="callout">
-        Si usas el enlace de eliminación (esta página) en Google Play, tendrás una vía para solicitar la eliminación
-        incluso si ya no puedes abrir la app.
-    </p>
+        <h3>7.2 ¿Cómo solicitar la eliminación?</h3>
+        <p>Además de los pasos de los apartados 6.1–6.3, puedes pedirnos directamente la eliminación de tus datos asociados a la app:</p>
+        <ol>
+            <li>Envía un correo a <a href="mailto:brunorodriguezvaca@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20datos%20-%20English%20Tutor&body=Hola%2C%20quiero%20solicitar%20la%20eliminaci%C3%B3n%20de%20mis%20datos%20asociados%20a%20la%20app%20English%20Tutor.%20Correo%20con%20el%20que%20inici%C3%A9%20sesi%C3%B3n%3A%20_____%0A%0AEntiendo%20que%20esto%20puede%20eliminar%20mi%20progreso%20y%20copias%20de%20seguridad.">brunorodriguezvaca@gmail.com</a> indicando el correo con el que iniciaste sesión en la app.</li>
+            <li>Procesaremos la solicitud normalmente en un plazo de <strong>7 días</strong> y, como máximo, en <strong>30 días naturales</strong>.</li>
+            <li>Te confirmaremos por correo cuando la eliminación haya sido completada o si necesitamos información adicional para verificar tu identidad.</li>
+        </ol>
+
+        <h3>7.3 ¿Qué datos se eliminan o conservan? ¿Y por cuánto tiempo?</h3>
+        <ul>
+            <li><strong>Datos que se eliminan</strong>:
+                <ul>
+                    <li>Progreso/estadísticas de lecciones almacenados localmente.</li>
+                    <li>Copia de seguridad en tu <em>Google Drive &gt; appDataFolder</em> (p. ej. <code>writable_database.json</code>).</li>
+                    <li>Tokens/credenciales de sesión guardados por la app (p. ej., en almacenamiento seguro del dispositivo).</li>
+                </ul>
+            </li>
+            <li><strong>Datos que NO conservamos en servidores propios</strong>: no manejamos servidores propios con tu información personal; la app trabaja en tu dispositivo y, opcionalmente, en tu propio Google Drive.</li>
+            <li><strong>Retención</strong>:
+                <ul>
+                    <li>Datos locales: permanecen hasta que el usuario los borra (p. ej., “Borrar datos” o desinstalación) o hasta que atendemos tu solicitud de eliminación.</li>
+                    <li>Datos en Drive: permanecen hasta que el usuario los elimina siguiendo el punto 6.2 o hasta que los eliminemos al atender tu solicitud.</li>
+                    <li>Tokens de acceso: caducan automáticamente (normalmente en ~1 hora); al eliminar datos revocamos/limpiamos credenciales.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p class="callout">Si usas el enlace de eliminación (esta página) en Google Play, tendrás una vía para solicitar la eliminación incluso si ya no puedes abrir la app.</p>
+    </section>
 </main>
 
 <footer>
-    &copy; 2025 English Tutor. Todos los derechos reservados.
+    <div class="container">
+        © <span id="y"></span> Rootlish · <a href="./index.html">Inicio</a> · <a href="./terms.html">Términos</a>
+    </div>
 </footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
